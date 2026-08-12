@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Berenice Ramos Romero</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #222;
+      background: #fff;
+    }
+
+    .page-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Nav */
+    nav {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .nav-name {
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #222;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.4rem;
+      font-size: 0.88rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #555;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover { color: #222; }
+
+    .nav-links a.active {
+      color: #222;
+      font-weight: 500;
+      border-bottom: 1.5px solid #222;
+      padding-bottom: 1px;
+    }
+
+    /* Two-column layout */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* Photo */
+    .photo-col img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 4px;
+      display: block;
+    }
+
+    /* Right column */
+    .text-col h1 {
+      font-family: 'Lora', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 0.3rem;
+      color: #222;
+    }
+
+    .subtitle {
+      font-size: 0.92rem;
+      color: #666;
+      font-weight: 300;
+      margin-bottom: 0.1rem;
+    }
+
+    .institution {
+      font-size: 0.92rem;
+      color: #666;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+
+    .institution a { color: #1a7a5e; text-decoration: none; }
+    .institution a:hover { text-decoration: underline; }
+
+    /* Bio */
+    .bio { margin-bottom: 1.75rem; }
+
+    .bio p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 0.85rem;
+    }
+
+    .bio a { color: #1a7a5e; text-decoration: none; }
+    .bio a:hover { text-decoration: underline; }
+
+    /* Research tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: #f4f4f2;
+      color: #555;
+      border: 0.5px solid #ddd;
+    }
+
+    /* Recent work */
+    .recent-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888;
+      margin-bottom: 0.75rem;
+    }
+
+    .news-item {
+      display: flex;
+      gap: 1rem;
+      align-items: baseline;
+      padding: 0.85rem 0;
+      border-top: 0.5px solid #e8e8e8;
+    }
+
+    .news-date {
+      font-size: 0.78rem;
+      color: #aaa;
+      white-space: nowrap;
+      min-width: 2.8rem;
+    }
+
+    .news-text {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .news-text em { font-style: italic; }
+    .news-text a { color: #1a7a5e; text-decoration: none; }
+    .news-text a:hover { text-decoration: underline; }
+
+    /* Footer */
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1.25rem;
+      border-top: 0.5px solid #e8e8e8;
+      font-size: 0.85rem;
+      color: #888;
+    }
+
+    footer a { color: #1a7a5e; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* Responsive */
+    @media (max-width: 620px) {
+      .main-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .photo-col img {
+        width: 140px;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+      }
+      nav { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <nav>
+    <a href="index.html" class="nav-name">Berenice Ramos Romero</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Biografía</a></li>
+      <li><a href="research.html">Investigación</a></li>
+      <li><a href="publications.html">Publicaciones</a></li>
+      <li><a href="teaching.html">Docencia</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </nav>
+
+  <div class="main-grid">
+
+    <div class="photo-col">
+      <img src="assets/fotoaf.jpg" alt="Berenice Ramos Romero">
+    </div>
+
+    <div class="text-col">
+      <h1>Berenice Ramos Romero</h1>
+      <p class="subtitle">Doctora en Literatura</p>
+      <p class="institution">
+        <a href="https://letras.uc.cl/" target="_blank" rel="noopener noreferrer">Pontificia Universidad Católica de Chile</a>
+        &nbsp;·&nbsp;
+        <a href="https://estetica.uc.cl/" target="_blank" rel="noopener noreferrer">Instituto Interdisciplinario de Estética</a>
+        <a href="https://estudiosasiaticos.uc.cl/" target="_blank" rel="noopener noreferrer">Centro UC de Estudios Asiáticos</a>
+      </p>
+
+      <div class="bio">
+        <p>
+          Doctora en Literatura por la Pontificia Universidad Católica de Chile. Magíster en Literatura Mexicana, Magíster en Literatura con mención en Literatura Chilena y 
+          especialista en Literatura japonesa contemporánea. Ha realizado estancias de investigación en la Universidad Complutense de Madrid, en la Universitat de Barcelona y 
+          en la Universidad de Osaka, abordando la cartografía de narrativas latinoamericanas japonistas. Recientemente, se ha especializado en la traducción de narrativa latinoamericana 
+          al japonés, con estancias en el Centro Cultural Hispano Japonés de la Universidad de Salamanca y en la Universidad de Tokyo. 
+        </p>
+        <p>
+          Entre 2016 y 2020 fue editora de Taller de Letras, revista de la Facultad de Letras de la Pontificia Universidad Católica de Chile.
+        </p>
+          <p>
+          Su campo de estudio abarca el orientalismo y el japonismo en la narrativa latinoamericana, así como la novela japonesa de los siglos XX y XXI. 
+          Sus líneas de investigación incluyen la intertextualidad, la literatura comparada, la narrativa transatlántica, la traducción y las teorías literaria y cultural, 
+          con especial énfasis en los procesos de recepción y transferencia entre América Latina y Japón.
+        </p>
+
+        <p>
+          Actualmente se desempeña como Investigadora Responsable del proyecto FONDECYT de Postdoctorado 3240264 «Entrelazamientos asiáticos. Recepción de la literatura latinoamericana contemporánea en Japón», financiado por 
+          <a href="https://anid.cl/" target="_blank" rel="noopener noreferrer">ANID-Chile</a>
+          , y como profesora en el Instituto Interdisciplinario de Estética, UC. Es creadora del Mapa de escritoras y escritores latinoamericanos traducidos al japonés.
+        </p>
+        <p>
+         Ha publicado su trabajo en distintos medios y revistas internacionales, así como ha participado en congresos nacionales e internacionales de literatura, estudios asiáticos y humanidades.
+        </p>
+      </div>
+
+      <div class="tags">
+        <span class="tag">Literatura comparada</span>
+        <span class="tag">Literatura japonesa</span>
+        <span class="tag">Narrativa latinoamericana</span>
+        <span class="tag">Traducción y recepción literaria</span>
+        <span class="tag">Relaciones culturales entre América Latina y Asia</span>
+      </div>
+
+      <p class="recent-label">Trabajo reciente</p>
+
+      
+<div class="news-item">
+  <span class="news-date">2026</span>
+  <span class="news-text">
+    </p>Ramos, Berenice. “Convertirse en nikkei: crear, desafiar y ampliar la identificación de nikkei entre los chilenos de ascendencia japonesa 
+    (Becoming nikkei: creating, challenging, and expanding nikkei identification among chileans of japanese descent).”</p>
+    <em>Grafógrafo.</em>
+  </span>
+</div>
+
+<div class="news-item">
+  <span class="news-date">2026</span>
+  <span class="news-text">
+   </p> Ramos, Berenice. Charla «Pioneras del feminismo japonés».</p>
+    <em>Librería del GAM.</em>
+  </span>
+</div>
+
+<div class="news-item">
+  <span class="news-date">2024</span>
+  <span class="news-text">
+    </p>Ramos, Berenice. Club de lectura. «Después de Hiroshima y Nagasaki».</p>
+    <em>CEA UC</em>
+  </span>
+</div>
+
+      <footer>
+  <a href="mailto:bramos1@uc.cl " target="_blank" rel="noopener noreferrer" title="Email" style="display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:50%; border:1px solid #ccc; color:#555; text-decoration:none; margin-right:8px;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+  </a>
+</footer>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
